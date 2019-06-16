@@ -84,15 +84,15 @@ let renderCircles = (circlesGroup, newXScale, chosenXaxis) => {
 }
 
 // function used for updating circles group with new tooltip
-function updateToolTip(chosenXAxis, circlesGroup) {
+function updateToolTip(chosenXAxis ,circlesGroup) {
 
-  if (chosenXAxis === "poverty") {
-    var label = "In Poverty (%)";
-  } else if (chosenXAxis === "age"){
-    var label = "Age Median";
-  } else {
-    var label = "Household Income(Median)";
-  }
+  // if (chosenXAxis === "poverty") {
+  //   var label = "In Poverty (%)";
+  // } else if (chosenXAxis === "age"){
+  //   var label = "Age Median";
+  // } else {
+  //   var label = "Household Income(Median)";
+  // }
 
   var toolTip = d3.tip()
     .attr("class", "tooltip")
@@ -222,8 +222,8 @@ d3.csv("assets/data/data.csv", function(err, csvData) {
 // --------- X event listner -----------------
   labelsGroup.selectAll("text")
     .on("click", ()=> {
-      var value = d3.select(this).attr("value");
-      
+      let value = d3.select(this).attr("value");
+
       if (value !== chosenXAxis) {
         // replaces chosenXAxis with value
         chosenXAxis = value;
