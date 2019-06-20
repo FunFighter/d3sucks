@@ -6,6 +6,10 @@
 * {
   box-sizing: border-box; 
 }
+#noLs{
+  justify-content: center;
+  text-align: center;
+}
 body {
   display: flex;
   font-family: 'Lato', sans-serif;
